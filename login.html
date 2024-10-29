@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Login</button>
+            <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+        </form>
+    </div>
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form from submitting by default
+            
+            // Get form values
+            const username = document.getElementById("username").value.trim();
+            const password = document.getElementById("password").value.trim();
+    
+            // Basic validation
+            if (username === "" || password === "") {
+                alert("Both fields are required!");
+            } else {
+                // Simulate successful login or proceed to backend validation
+                alert("Login successful!");
+                
+                // Store the username in localStorage
+                localStorage.setItem("loggedInUser", username);
+    
+                // Redirect to home page
+                window.location.href = "home.html";
+            }
+        });
+    </script>
+    
+</body>
+</html>

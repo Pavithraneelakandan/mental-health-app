@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,
+    initial-scale=1.0">
+    <title>Mental Health App</title>
+     <!-- Add Login and Signup buttons -->
+     <a href="login.html" class="button">
+        <span class="button__text">Login</span>
+        <ion-icon name="log-in-outline"></ion-icon>
+    </a>
+    <a href="signup.html" class="button">
+        <span class="button__text">Sign Up</span>
+        <ion-icon name="person-add-outline"></ion-icon>
+    </a>
+    <link rel="stylesheet" href="style.css"> <!--Add style.css style sheet to change style of page-->
+</head>
+<body>
+ 
+    <div class="video">
+        <video src="./bg.mp4" muted loop autoplay></video>  <!--Adds a video background that is looped-->
+    </div>
+
+    <div app>
+        <div class="app">
+            <center>Mental Health App</center> <!--Title centered at the top of page-->
+                   
+         </div>   
+    </div>
+    <br></br>
+
+
+    <div buttons> 
+        <div class="buttons">   <!--Button that can be pressed but is placeholder-->
+            <a href="meditation.html" type="button" class="button">
+                <span class="button__text">Meditation</span>
+                <span class="button__icon"></span>
+                <ion-icon name="headset-outline"></ion-icon>   
+            </a>
+            <br></br>
+            
+            <a href="mental.html" type="button" class="button"> <!--Button created that leads to the sounds page-->
+                <span class="button__text">Sounds</span>
+                <span class="button__icon"></span>
+                <ion-icon name="musical-notes-outline"></ion-icon> <!--Custom icons implementd-->
+            </a>  
+            
+
+        </div>       
+    </div>
+        <br></br>
+        
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script> <!--script that allows for custom icons that are used in the button-->
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script> <!--ionicons script-->
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="container">
+            <h2>Welcome to Your Dashboard</h2>
+            <p id="welcomeMessage">Welcome, <span id="usernameDisplay"></span>!</p>
+            <a href="index.html" onclick="logout()">Logout</a>
+        </div>
+    
+        <script>
+            // Retrieve the username from localStorage
+            const username = localStorage.getItem("loggedInUser");
+    
+            // Display the username on the page
+            if (username) {
+                document.getElementById("usernameDisplay").textContent = username;
+            } else {
+                // Redirect to login page if not logged in
+                window.location.href = "login.html";
+            }
+    
+            // Logout function to clear the username and redirect to login
+            function logout() {
+                localStorage.removeItem("loggedInUser");
+                window.location.href = "login.html";
+            }
+        </script>
+    
+    </body>
+</html>
